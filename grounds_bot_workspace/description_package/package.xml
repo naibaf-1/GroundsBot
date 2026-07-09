@@ -3,9 +3,9 @@
 <package format="3">
   <name>description_package</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>The description of the GroundsBot</description>
   <maintainer email="175958349+naibaf-1@users.noreply.github.com">naibaf-1</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
