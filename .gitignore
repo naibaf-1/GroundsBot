@@ -1,6 +1,6 @@
 devel/
-logs/
-build/
+grounds_bot_workspace/logs/
+grounds_bot_workspace/build/
 bin/
 lib/
 msg_gen/
