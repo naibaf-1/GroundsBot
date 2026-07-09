@@ -52,3 +52,5 @@ CATKIN_IGNORE
 
 # Personal
 Parts.md
+grounds_bot_workspace/install/
+grounds_bot_workspace/log/
