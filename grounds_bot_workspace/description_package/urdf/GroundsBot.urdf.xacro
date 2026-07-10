@@ -49,7 +49,8 @@
       <material name="grey"/>
     </visual>
   </link>
-  <xacro:wheel prefix="left"/>
+  <xacro:wheel prefix="front_left"/>
+  <xacro:wheel prefix="front_right"/>
   
   <!-- Joints -->
   <joint name="base_cutting_unit_joint" type="fixed">
@@ -57,10 +58,16 @@
     <child link="cutting_unit_link"/>
     <origin xyz="1.5 0 0" rpy="0 0 0"/>
   </joint>
-  <joint name="base_left_wheel_joint" type="continuous">
+  <joint name="base_front_left_wheel_joint" type="continuous">
     <parent link="base_link"/>
-    <child link="left_wheel_link"/>
+    <child link="front_left_wheel_link"/>
     <origin xyz="0.75 -1.3 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <joint name="base_front_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_right_wheel_link"/>
+    <origin xyz="0.75 1.3 0" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
   </joint>
 
