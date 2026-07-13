@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot name="GroundsBot" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <!-- Typical inertia for a box (parameters: mass, x-length, y-length, z-length, origin_xyz, origin_rpy) -->
-  <xacro:macro name="bos_inertia" params="m x y z o_xyz o_rpy">
+  <xacro:macro name="box_inertia" params="m x y z o_xyz o_rpy">
     <inertial>
       <mass value="${m}"/>
       <origin xyz="${o_xyz}" rpy="${o_rpy}"/>

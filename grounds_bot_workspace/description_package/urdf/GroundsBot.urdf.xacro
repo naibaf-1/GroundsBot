@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <robot name="GroundsBot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+  <!-- Include other xacro files -->
+<xacro:include filename="$(find description_package)/urdf/inertia_properties.xacro" />  
+
   <!-- Xacro properties -->
   <xacro:property name="width" value="3.0"/>
   <xacro:property name="height" value="1.5"/>
@@ -29,6 +32,8 @@
         </geometry>
         <material name="black"/>
       </visual>
+      <xacro:cylinder_inertia m="0.25" r="${wheel_radius}" l="${wheel_width}"
+                              o_xyz="0 0 0" o_rpy="0 0 0"/>
     </link>
   </xacro:macro>
 
@@ -41,6 +46,8 @@
       </geometry>
       <material name="grey"/>
     </visual>
+    <xacro:box_inertia m="3.0" x="${(length / 3) * 2}" y="${width - (wheel_width * 2)}" z="${height}"
+                       o_xyz="0 0 ${height / 2}" o_rpy="0 0 0"/>
   </link>
   <link name="cutting_unit_link">
     <visual>
@@ -50,6 +57,8 @@
       </geometry>
       <material name="grey"/>
     </visual>
+    <xacro:box_inertia m="1.0" x="${length / 3}" y="${width}" z="${height / 3}"
+                       o_xyz="${length / 6} 0 ${height / 6}" o_rpy="0 0 0"/>
   </link>
   <xacro:wheel prefix="front_left"/>
   <xacro:wheel prefix="rear_left"/>
@@ -88,17 +97,4 @@
   </joint>
 
 </robot>
-
-<!-- <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="2.0 1.2 0.4"/>
-      </geometry>
-    </collision>
-
-    <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <mass value="200.0"/>
-      <inertia ixx="16.0" iyy="66.7" izz="80.7" ixy="0" ixz="0" iyz="0"/>
-    </inertial> -->
 
