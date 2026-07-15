@@ -32,6 +32,12 @@
         </geometry>
         <material name="black"/>
       </visual>
+      <collision>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
+        </geometry>
+        <origin xyz="" rpy=""/>
+      </collision>
       <xacro:cylinder_inertia m="0.25" r="${wheel_radius}" l="${wheel_width}"
                               o_xyz="0 0 0" o_rpy="0 0 0"/>
     </link>
@@ -46,6 +52,12 @@
       </geometry>
       <material name="grey"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="${(length / 3) * 2} ${width - (wheel_width * 2)} ${height}"/>
+      </geometry>
+      <origin xyz="" rpy=""/>
+    </collision>
     <xacro:box_inertia m="3.0" x="${(length / 3) * 2}" y="${width - (wheel_width * 2)}" z="${height}"
                        o_xyz="0 0 ${height / 2}" o_rpy="0 0 0"/>
   </link>
@@ -57,6 +69,12 @@
       </geometry>
       <material name="grey"/>
     </visual>
+    <collision>
+      <geometry>
+          <box size="${length / 3} ${width} ${height / 3}"/>
+      </geometry>
+      <origin xyz="" rpy=""/>
+    </collision>
     <xacro:box_inertia m="1.0" x="${length / 3}" y="${width}" z="${height / 3}"
                        o_xyz="${length / 6} 0 ${height / 6}" o_rpy="0 0 0"/>
   </link>
