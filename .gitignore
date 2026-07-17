@@ -54,3 +54,4 @@ CATKIN_IGNORE
 Parts.md
 grounds_bot_workspace/install/
 grounds_bot_workspace/log/
+grounds_bot_workspace/src/.vscode/
