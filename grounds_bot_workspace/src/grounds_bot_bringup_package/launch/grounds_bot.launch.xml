@@ -1,5 +1,6 @@
 <launch>
-  <let name="urdf_path" value="$(find-pkg-share description_package)/urdf/GroundsBot.urdf.xacro" />
+  <let name="urdf_path" value="$(find-pkg-share description_package)/urdf/GroundsBot.urdf.xacro"/>
+  <let name="gazebo_config_path" value="$(find-pkg-share grounds_bot_bringup_package)/config/gazebo_bridge.yaml" />
 
   <!-- Start the robot_state_publisher node -->
   <node pkg="robot_state_publisher" exec="robot_state_publisher">
@@ -13,5 +14,10 @@
 
   <!-- Spawn the robot in Gazebo -->
   <node pkg="ros_gz_sim" exec="create" args="-topic robot_description" />
+  
+  <!-- Create the bridge -->
+  <node pkg="ros_gz_bridge" exec="parameter_bridge">
+      <param name="config_file" value="$(var gazebo_config_path)"/>
+  </node>
 </launch>
 
